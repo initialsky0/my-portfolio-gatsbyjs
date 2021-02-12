@@ -14,13 +14,26 @@ const generateTextAnimation = (maxTextLength, element, animationName, duration, 
    for(let i = 0; i < maxTextLength; i++) {
       const actualDelay = delay?.offset ? delay.offset + (i * delay.value) : i * delay;
       animationStyles += `
-         ${element}:nth-child(${i+1}) {
+         ${element}:nth-of-type(${i+1}) {
             animation: ${animationName} ${duration}s linear ${actualDelay}s ${extraProps};
          }
       `
    }
    return css`${animationStyles}`;
 }
+
+export const NavbarOverlay = styled.div`
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: ${({headerHeight}) => headerHeight ? `${headerHeight}px` : `unset`};
+   display: flex;
+   justify-content: center;
+   ${glassyBackground}
+   ${slideDownAnimation}
+   animation: slide-down .2s ease-in;
+`;
 
 export const NavbarLink = styled(Link)`
    text-decoration: none;
@@ -39,17 +52,11 @@ export const NavbarLink = styled(Link)`
 `;
 
 export const NavbarContainer = styled.nav`
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: ${({headerHeight}) => headerHeight ? `${headerHeight}px` : `unset`};
+   width: 960px;
+   height: 100%;
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
-   ${glassyBackground}
-   ${slideDownAnimation}
-   animation: slide-down .2s ease-in;
+   justify-content: space-between;
 
    ${NavbarLink} {
       opacity: 0;
