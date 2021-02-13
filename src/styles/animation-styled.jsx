@@ -3,11 +3,37 @@ import { css } from "styled-components";
 export const slideDownAnimation = css`
    @keyframes slide-down {
       from {
+         display: flex;
          transform: translateY(-100%);
       }
 
       to {
          transform: translateY(0%);
+      }
+   }
+`;
+
+export const slideUpAnimation = css`
+   @keyframes slide-up {
+      from {
+         transform: translateY(0%);
+      }
+
+      to {
+         display: none;
+         transform: translateY(-100%);
+      }
+   }
+`;
+
+export const fadeIn = css`
+   @keyframes fade-in {
+      from {
+         opacity: 0;
+      }
+
+      to {
+         opacity: 1;
       }
    }
 `;

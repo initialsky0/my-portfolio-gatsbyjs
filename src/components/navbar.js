@@ -6,17 +6,17 @@ import { HeaderContext } from "../context/header-provider";
 import MenuBtn from "./menuBtn";
 
 const navContent = [
-   { route: '/', navTitle: 'Home' },
-   { route: '/page-2', navTitle: 'About Me' },
-   { route: '/', navTitle: 'My Works' },
-   { route: '/', navTitle: 'Contact' }
+   { route: `/`, navTitle: `Home` },
+   { route: `/`, navTitle: `About Me` },
+   { route: `/page-2`, navTitle: `My Works` },
+   { route: `/`, navTitle: `Contact` }
 ];
 
 const Navbar = ({ headerHeight }) => {
-   const { navState, toggleNavState } = useContext(HeaderContext);
+   const { navState } = useContext(HeaderContext);
    return (
-      <NavbarOverlay headerHeight={headerHeight} >
-         <NavbarContainer contents={navContent} >
+      <NavbarOverlay headerHeight={headerHeight} navState={navState} >
+         <NavbarContainer contents={navContent} navState={navState} >
             {navContent.map((content, index1) => (
                <NavbarLink key={`nav${index1}`} to={content.route} >
                   {[...content.navTitle].map((letter, index2) => (
@@ -25,7 +25,7 @@ const Navbar = ({ headerHeight }) => {
                </NavbarLink>
                )
             )}
-            <MenuBtn onClick={toggleNavState} navState={navState} />
+            {navState ? <MenuBtn /> : null}
          </NavbarContainer>
       </NavbarOverlay>
    );

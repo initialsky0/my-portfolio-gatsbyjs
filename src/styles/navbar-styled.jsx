@@ -1,8 +1,10 @@
 import styled, {css} from "styled-components";
 import { glassyBackground } from "../styles/styled-utils";
+import { MenuBtnContainer } from "../styles/menuBtn-styled";
 import { bounceAnimation, 
          fadeInLeftAnimation, 
-         slideDownAnimation } from "../styles/animation-styled";
+         slideDownAnimation,
+         slideUpAnimation } from "../styles/animation-styled";
 import { Link } from "gatsby";
 
 const getMaxLength = contents => (
@@ -22,6 +24,16 @@ const generateTextAnimation = (maxTextLength, element, animationName, duration, 
    return css`${animationStyles}`;
 }
 
+const slideUp = css`
+   ${slideUpAnimation}
+   animation: slide-up .2s ease-out forwards;
+`;
+
+const slideDown =css`
+   ${slideDownAnimation}
+   animation: slide-down .2s ease-in forwards;
+`;
+
 export const NavbarOverlay = styled.div`
    position: fixed;
    top: 0;
@@ -31,8 +43,7 @@ export const NavbarOverlay = styled.div`
    display: flex;
    justify-content: center;
    ${glassyBackground}
-   ${slideDownAnimation}
-   animation: slide-down .2s ease-in;
+   ${({navState}) => navState ? slideDown : slideUp }
 `;
 
 export const NavbarLink = styled(Link)`
@@ -58,19 +69,24 @@ export const NavbarContainer = styled.nav`
    align-items: center;
    justify-content: space-between;
 
+   ${MenuBtnContainer} {
+      margin-right: 1.0875rem;
+   }
+
    ${NavbarLink} {
       opacity: 0;
    }
 
    ${fadeInLeftAnimation}
-   ${({ contents }) => 
-      generateTextAnimation(
-         contents.length, 
-         NavbarLink, 
-         `fade-in-from-left`, 
-         .5, 
-         {value: .1, offset: .3}, 
-         `forwards`)
+   ${({ contents, navState }) => 
+      navState 
+         ? generateTextAnimation(
+            contents.length, NavbarLink, 
+            `fade-in-from-left`, 
+            .2, 
+            {value: .1, offset: .3}, 
+            `forwards`) 
+         : ``
    }
 
    ${NavbarLink}:hover {

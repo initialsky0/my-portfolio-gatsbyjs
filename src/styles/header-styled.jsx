@@ -21,10 +21,19 @@ export const HeaderContainer = styled.div`
    margin: 0 auto;
    max-width: 960px;
    padding: 1.45rem 1.0875rem;
+   display: flex;
+   justify-content: space-between;
 `;
 
 export const HeaderTitle = styled.h1`
    margin: 0;
+   user-select: none;
+   transition: opacity .5s;
+   ${({navState}) => navState 
+      ? `opacity: 0;
+         z-index: -1;` 
+      : `opacity: 1;`
+   }
    
    a {
       color: var(--white-cloud);

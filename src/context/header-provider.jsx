@@ -7,7 +7,7 @@ export const HeaderContext = createContext({
 
 const HeaderProvider = ({ children }) => {
    // Provoder states
-   const [ navState, setNavState ] = useState(true);
+   const [ navState, setNavState ] = useState(false);
 
    // Use effect if any
 
