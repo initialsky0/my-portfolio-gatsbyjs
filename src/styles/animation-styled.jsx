@@ -1,5 +1,17 @@
 import { css } from "styled-components";
 
+export const slidingBackgroundAnimation =css`
+   @keyframes slide-background {
+      from {
+         transform: translate3d(0, 0, 0);
+      }
+
+      to {
+         transform: translate3d(-143vw, 0, 0);
+      }
+   }
+`;
+
 export const slideDownAnimation = css`
    @keyframes slide-down {
       from {
