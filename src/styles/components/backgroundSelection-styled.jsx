@@ -3,7 +3,7 @@ import { selectBackgroundFilter } from "./slidingBackground-styled";
 
 const activeBkgdFilter = css`
    background-color: var(--white-cloud);
-   transform: scale(1.1);
+   transform: scale(1.2);
 `;
 
 export const BkgdSelectorBox = styled.div`

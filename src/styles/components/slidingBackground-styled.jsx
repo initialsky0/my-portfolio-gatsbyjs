@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { slidingBackgroundAnimation } from "../styles/animation-styled";
+import { slidingBackgroundAnimation } from "../animation-styled";
 
 const slidingBGAnimation = css`
    ${slidingBackgroundAnimation}
@@ -8,15 +8,15 @@ const slidingBGAnimation = css`
 
 export const selectBackgroundFilter = backgroundNum => {
    const bkgdFilterDay = css `
-      box-shadow: 0 0 0 50vh rgba(255, 255, 255, 0.5) inset;
+      box-shadow: 0 0 0 100vh rgba(255, 255, 255, 0.5) inset;
    `;
 
    const bkgdFilterSunset = css `
-      box-shadow: 0 0 0 50vh rgba(253, 94, 83, 0.4) inset;
+      box-shadow: 0 0 0 100vh rgba(253, 94, 83, 0.4) inset;
    `;
 
    const bkgdFilterNight = css `
-      box-shadow: 0 0 0 50vh rgba(7, 11, 52, 0.65) inset;
+      box-shadow: 0 0 0 100vh rgba(7, 11, 52, 0.65) inset;
    `;
 
    return backgroundNum === 1 

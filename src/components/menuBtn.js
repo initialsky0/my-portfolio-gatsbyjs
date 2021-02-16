@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { GlobalContext } from "../context/global-provider";
-import { MenuBtnContainer, MenuBtnStyles } from "../styles/menuBtn-styled";
+import { MenuBtnContainer, MenuBtnStyles } from "../styles/components/menuBtn-styled";
 
 const MenuBtn = () => {
    const { navState, toggleNavState } = useContext(GlobalContext);

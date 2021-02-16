@@ -1,10 +1,10 @@
 import styled, {css} from "styled-components";
-import { glassyBackground, positionAbsOrigin } from "../styles/styled-utils";
-import { MenuBtnContainer } from "../styles/menuBtn-styled";
+import { glassyBackground, positionAbsOrigin } from "../styled-utils";
+import { MenuBtnContainer } from "./menuBtn-styled";
 import { bounceAnimation, 
          fadeInLeftAnimation, 
          slideDownAnimation,
-         slideUpAnimation } from "../styles/animation-styled";
+         slideUpAnimation } from "../animation-styled";
 import { Link } from "gatsby";
 
 const getMaxLength = contents => (

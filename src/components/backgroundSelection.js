@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { BkgdSelectorContainer, BkgdSelectorBox } from "../styles/backgroundSelection-styled";
+import { BkgdSelectorContainer, BkgdSelectorBox } from "../styles/components/backgroundSelection-styled";
 import { GlobalContext } from "../context/global-provider";
 
 const BackgroundSelection = () => {

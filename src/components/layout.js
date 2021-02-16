@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import Header from "./header";
@@ -13,7 +13,7 @@ import { GlobalContext } from "../context/global-provider";
 import "../styles/layout.css";
 
 // Sliding Background
-import { BackgroundWrapper, SlidingBGContainer } from "../styles/slidingBackground-styled";
+import { BackgroundWrapper, SlidingBGContainer } from "../styles/components/slidingBackground-styled";
 import backgroundImage from "../images/blue-sky-texture-seamless.jpg";
 
 const Layout = ({ children }) => {

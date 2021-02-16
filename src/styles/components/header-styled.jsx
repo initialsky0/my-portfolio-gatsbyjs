@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { positionAbsOrigin } from "./styled-utils";
+import { positionAbsOrigin } from "../styled-utils";
 
 export const HeaderStyled = styled.header`
    position: relative;

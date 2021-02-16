@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavbarContainer, 
          NavbarLink, 
-         NavbarOverlay } from "../styles/navbar-styled";
+         NavbarOverlay } from "../styles/components/navbar-styled";
 import { GlobalContext } from "../context/global-provider";
 import MenuBtn from "./menuBtn";
 

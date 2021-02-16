@@ -7,7 +7,7 @@ import { GlobalContext } from "../context/global-provider";
 import { HeaderStyled,
          HeaderContainer,
          HeaderTitle,
-         HeaderUtilities } from '../styles/header-styled';
+         HeaderUtilities } from '../styles/components/header-styled';
 import BackgroundSelection from "./backgroundSelection";
 
 const Header = ({ siteTitle }) => {

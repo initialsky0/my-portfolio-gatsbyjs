@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import { fadeIn } from "../styles/animation-styled";
+import { fadeIn } from "../animation-styled";
 // 1rem = 18px
 
 const menuIconStyles = css`
