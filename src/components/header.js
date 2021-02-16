@@ -3,14 +3,16 @@ import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState, useContext } from "react";
 import Navbar from './navbar';
 import MenuBtn from './menuBtn';
-import { HeaderContext } from "../context/header-provider";
+import { GlobalContext } from "../context/global-provider";
 import { HeaderStyled,
          HeaderContainer,
-         HeaderTitle } from '../styles/header-styled';
+         HeaderTitle,
+         HeaderUtilities } from '../styles/header-styled';
+import BackgroundSelection from "./backgroundSelection";
 
 const Header = ({ siteTitle }) => {
   // Get nav state
-  const { navState } = useContext(HeaderContext);
+  const { navState } = useContext(GlobalContext);
   // Obtain header height
   const headerRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(null);
@@ -27,7 +29,13 @@ const Header = ({ siteTitle }) => {
             {siteTitle}
           </Link>
         </HeaderTitle>
-        {navState ? null : <MenuBtn />}
+        {navState 
+          ? null 
+          : <HeaderUtilities>
+              <BackgroundSelection />
+              <MenuBtn />
+            </HeaderUtilities>
+        }
       </HeaderContainer>
     </HeaderStyled>
   );

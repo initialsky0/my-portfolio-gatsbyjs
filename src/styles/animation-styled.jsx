@@ -7,7 +7,7 @@ export const slidingBackgroundAnimation =css`
       }
 
       to {
-         transform: translate3d(-143vw, 0, 0);
+         transform: translate3d(-50%, 0, 0);
       }
    }
 `;

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { NavbarContainer, 
          NavbarLink, 
          NavbarOverlay } from "../styles/navbar-styled";
-import { HeaderContext } from "../context/header-provider";
+import { GlobalContext } from "../context/global-provider";
 import MenuBtn from "./menuBtn";
 
 const navContent = [
@@ -13,12 +13,12 @@ const navContent = [
 ];
 
 const Navbar = ({ headerHeight }) => {
-   const { navState } = useContext(HeaderContext);
+   const { navState, toggleNavState } = useContext(GlobalContext);
    return (
       <NavbarOverlay headerHeight={headerHeight} navState={navState} >
          <NavbarContainer contents={navContent} navState={navState} >
             {navContent.map((content, index1) => (
-               <NavbarLink key={`nav${index1}`} to={content.route} >
+               <NavbarLink key={`nav${index1}`} to={content.route} onClick={toggleNavState} >
                   {[...content.navTitle].map((letter, index2) => (
                      <span key={`${index1}${index2}`} >{letter === ` ` ? `\u00A0` : letter }</span>
                   ))}

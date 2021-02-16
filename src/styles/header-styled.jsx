@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { positionAbsOrigin } from "./styled-utils";
 
 export const HeaderStyled = styled.header`
    position: relative;
@@ -6,9 +7,7 @@ export const HeaderStyled = styled.header`
 
    &::before{
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+      ${positionAbsOrigin}
       width: 100%;
       height: 100%;
       background-color: var(--primary-color);
@@ -38,5 +37,15 @@ export const HeaderTitle = styled.h1`
    a {
       color: var(--white-cloud);
       text-decoration: none;
+   }
+`;
+
+export const HeaderUtilities = styled.div`
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   & > div:not(:last-child) {
+      margin-right: 1.5rem;
    }
 `;

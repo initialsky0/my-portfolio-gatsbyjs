@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import { glassyBackground } from "../styles/styled-utils";
+import { glassyBackground, positionAbsOrigin } from "../styles/styled-utils";
 import { MenuBtnContainer } from "../styles/menuBtn-styled";
 import { bounceAnimation, 
          fadeInLeftAnimation, 
@@ -35,9 +35,7 @@ const slideDown =css`
 `;
 
 export const NavbarOverlay = styled.div`
-   position: fixed;
-   top: 0;
-   left: 0;
+   ${positionAbsOrigin}
    width: 100%;
    height: ${({headerHeight}) => headerHeight ? `${headerHeight}px` : `unset`};
    display: flex;

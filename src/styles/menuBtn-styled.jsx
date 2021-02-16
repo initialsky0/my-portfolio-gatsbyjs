@@ -28,6 +28,7 @@ export const MenuBtnContainer = styled.div`
 
 export const MenuBtnStyles = styled.div`
    position: relative;
+   backface-visibility: hidden;
    ${menuIconStyles}
    ${({ navState }) => navState ? `transform: rotate(45deg);` : ``}
    

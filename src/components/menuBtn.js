@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
-import { HeaderContext } from "../context/header-provider";
+import { GlobalContext } from "../context/global-provider";
 import { MenuBtnContainer, MenuBtnStyles } from "../styles/menuBtn-styled";
 
 const MenuBtn = () => {
-   const { navState, toggleNavState } = useContext(HeaderContext);
+   const { navState, toggleNavState } = useContext(GlobalContext);
    return (
       <MenuBtnContainer onClick={toggleNavState} >
          <MenuBtnStyles navState={navState} />

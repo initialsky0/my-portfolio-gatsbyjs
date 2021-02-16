@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react";
+import React, {useContext} from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import HeaderProvider from "../context/header-provider";
 import Header from "./header";
+import { GlobalContext } from "../context/global-provider";
 import "../styles/layout.css";
 
 // Sliding Background
@@ -27,13 +27,13 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const { backgroundSelected } = useContext(GlobalContext);
+
   return (
     <>
       <BackgroundWrapper>
-        <SlidingBGContainer imgUrl={backgroundImage} />
-        <HeaderProvider>
-          <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        </HeaderProvider>
+        <SlidingBGContainer imgUrl={backgroundImage} backgroundNum={backgroundSelected} />
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <div
           style={{
             margin: `0 auto`,

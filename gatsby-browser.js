@@ -8,10 +8,13 @@
 
 import React from "react";
 import GlobalStyle from "./src/styles/GlobalStyle";
+import GlobalProvider from "./src/context/global-provider";
 
 export const wrapRootElement = ({ element }) => (
    <>
       <GlobalStyle />
-      {element}
+      <GlobalProvider>
+         {element}
+      </GlobalProvider>
    </>
 );
