@@ -1,21 +1,26 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { HomeContainer, HomeTextContenter, HomeLinkContainer } from "../styles/pages/index-title-styled";
+import { CustomBtn } from "../components/customBtn";
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <HomeContainer>
+      <HomeTextContenter>Welcome <br/> to <br/> My Portfolio</HomeTextContenter>
+      <HomeLinkContainer>
+        <CustomBtn href={`https://www.google.com/`} target={`_blank`} rel={`noopener noreferrer`}>
+          Google
+        </CustomBtn>
+        <CustomBtn href={`https://www.github.com/initialsky0`} target={`_blank`} rel={`noopener noreferrer`}>
+          Github
+        </CustomBtn>
+        <CustomBtn href={`https://www.w3schools.com`} target={`_blank`} rel={`noopener noreferrer`}>
+          w3schools
+        </CustomBtn>
+      </HomeLinkContainer>
+    </HomeContainer>
   </Layout>
 );
 

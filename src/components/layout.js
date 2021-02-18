@@ -49,9 +49,13 @@ const Layout = ({ children }) => {
           >
             © {new Date().getFullYear()}, Built with
             {` `}
-            <a href="https://www.gatsbyjs.com">Gatsby</a>
+            <a href="https://www.gatsbyjs.com" target="_blank" rel="noopener noreferrer">
+              Gatsby
+            </a>
             &nbsp;| Background photo from:&nbsp;
-            <a href="http://www.textures4photoshop.com/">textures4photoshop</a>
+            <a href="http://www.textures4photoshop.com/" target="_blank" rel="noopener noreferrer">
+              textures4photoshop
+            </a>
           </footer>
         </div>
       </BackgroundWrapper>
