@@ -1,5 +1,7 @@
 import styled, {css} from "styled-components";
-import { glassyBackground, positionAbsOrigin } from "../styled-utils";
+import { glassyBackground, 
+         positionAbsOrigin, 
+         generateTextAnimation } from "../styled-utils";
 import { MenuBtnContainer } from "./menuBtn-styled";
 import { bounceAnimation, 
          fadeInLeftAnimation, 
@@ -10,19 +12,6 @@ import { Link } from "gatsby";
 const getMaxLength = contents => (
    contents.reduce((acc, { navTitle }) => Math.max(acc, navTitle.length), 0)
 );
-
-const generateTextAnimation = (maxTextLength, element, animationName, duration, delay=0, extraProps=``) => {
-   let animationStyles = ``;
-   for(let i = 0; i < maxTextLength; i++) {
-      const actualDelay = delay?.offset ? delay.offset + (i * delay.value) : i * delay;
-      animationStyles += `
-         ${element}:nth-of-type(${i+1}) {
-            animation: ${animationName} ${duration}s linear ${actualDelay}s ${extraProps};
-         }
-      `
-   }
-   return css`${animationStyles}`;
-}
 
 const slideUp = css`
    ${slideUpAnimation}

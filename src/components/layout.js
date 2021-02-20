@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { useContext } from "react";
+import React, { useContext, useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import Header from "./header";
 import { GlobalContext } from "../context/global-provider";
 import "../styles/layout.css";
@@ -17,23 +17,21 @@ import { BackgroundWrapper, SlidingBGContainer } from "../styles/components/slid
 import backgroundImage from "../images/blue-sky-texture-seamless.jpg";
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const { title } = useSiteMetadata();
+  const { backgroundSelected, navState, toggleNavState } = useContext(GlobalContext);
+  
+  // Make sure nav menu is hidden when page load
+  const callToggleNav = useCallback(() => {
+    if(navState) toggleNavState()
+  }, [navState, toggleNavState])
 
-  const { backgroundSelected } = useContext(GlobalContext);
+  useEffect(callToggleNav, []);
 
   return (
     <>
       <BackgroundWrapper>
         <SlidingBGContainer imgUrl={backgroundImage} backgroundNum={backgroundSelected} />
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <Header siteTitle={title || `Title`} />
         <div
           style={{
             margin: `0 auto`,

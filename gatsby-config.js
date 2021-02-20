@@ -3,6 +3,12 @@ module.exports = {
     title: `My Portfolio`,
     description: `This is a portfolio template created with Gatsby.`,
     author: `@Initialsky0`,
+    navContents: [
+      { route: `/`, navTitle: `Home` },
+      { route: `/`, navTitle: `About Me` },
+      { route: `/page-2`, navTitle: `My Works` },
+      { route: `/`, navTitle: `Contact` }
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
