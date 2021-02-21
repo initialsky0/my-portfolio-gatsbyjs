@@ -6,6 +6,12 @@ const slidingBGAnimation = css`
    animation: slide-background 180s linear infinite;
 `;
 
+const mainContainer = css`
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+`;
+
 export const selectBackgroundFilter = backgroundNum => {
    const bkgdFilterDay = css `
       box-shadow: 0 0 0 100vh rgba(255, 255, 255, 0.5) inset;
@@ -30,6 +36,7 @@ export const BackgroundWrapper = styled.div`
    position: relative;
    height: 100%;
    overflow-x: hidden;
+   ${mainContainer}
 `;
 
 export const SlidingBGContainer = styled.div`

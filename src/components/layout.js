@@ -12,6 +12,10 @@ import Header from "./header";
 import { GlobalContext } from "../context/global-provider";
 import "../styles/layout.css";
 
+// Styled components
+import { ContentContainer, 
+         FooterContainer } from "../styles/components/layout-styled";
+
 // Sliding Background
 import { BackgroundWrapper, SlidingBGContainer } from "../styles/components/slidingBackground-styled";
 import backgroundImage from "../images/blue-sky-texture-seamless.jpg";
@@ -32,19 +36,9 @@ const Layout = ({ children }) => {
       <BackgroundWrapper>
         <SlidingBGContainer imgUrl={backgroundImage} backgroundNum={backgroundSelected} />
         <Header siteTitle={title || `Title`} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0 1.0875rem 1.45rem`,
-          }}
-        >
+        <ContentContainer>
           <main>{children}</main>
-          <footer
-            style={{
-              marginTop: `2rem`,
-            }}
-          >
+          <FooterContainer>
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.com" target="_blank" rel="noopener noreferrer">
@@ -54,8 +48,8 @@ const Layout = ({ children }) => {
             <a href="http://www.textures4photoshop.com/" target="_blank" rel="noopener noreferrer">
               textures4photoshop
             </a>
-          </footer>
-        </div>
+          </FooterContainer>
+        </ContentContainer>
       </BackgroundWrapper>
     </>
   );

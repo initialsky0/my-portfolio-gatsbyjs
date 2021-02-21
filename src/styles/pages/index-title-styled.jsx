@@ -15,7 +15,7 @@ export const HomeContainer = styled.div`
 `;
 
 export const HomeTextContenter = styled.h1`
-   margin: 5rem 2rem;
+   margin: 0 5rem 4rem;
    text-align: center;
    font-size: 6rem;
    ${fadeInTopAnimation}
