@@ -6,7 +6,7 @@ module.exports = {
     navContents: [
       { route: `/`, navTitle: `Home` },
       { route: `/`, navTitle: `About Me` },
-      { route: `/page-2`, navTitle: `My Works` },
+      { route: `/works`, navTitle: `My Works` },
       { route: `/`, navTitle: `Contact` }
     ],
   },

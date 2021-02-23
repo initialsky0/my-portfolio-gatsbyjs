@@ -9,12 +9,12 @@ import MenuBtn from "./menuBtn";
 const Navbar = ({ headerHeight }) => {
    // Query for nav data with useSiteMetadata hook
    const { navContents } = useSiteMetadata();
-   const { navState } = useContext(GlobalContext);
+   const { navState, updateCurrentSection } = useContext(GlobalContext);
    return (
       <NavbarOverlay headerHeight={headerHeight} navState={navState} >
          <NavbarContainer contents={navContents} navState={navState} >
             {navContents.map((content, index1) => (
-               <NavbarLink key={`nav${index1}`} to={content.route} >
+               <NavbarLink key={`nav${index1}`} to={content.route} onClick={() => updateCurrentSection(index1)} >
                   {[...content.navTitle].map((letter, index2) => (
                      <span key={`${index1}${index2}`} >{letter === ` ` ? `\u00A0` : letter }</span>
                   ))}
