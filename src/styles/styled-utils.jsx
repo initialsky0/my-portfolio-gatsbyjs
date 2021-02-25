@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 
 export const generateTextAnimation = (maxTextLength, element, animationName, duration, delay=0, extraProps=``) => {
    let animationStyles = ``;
@@ -22,4 +22,9 @@ export const positionAbsOrigin = css`
    position: absolute;
    top: 0;
    left: 0;
+`;
+
+export const SectionTitle = styled.h2`
+   text-align: center;
+   font-size: 2.5rem;
 `;

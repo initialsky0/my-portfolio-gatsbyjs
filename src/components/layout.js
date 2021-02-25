@@ -9,6 +9,7 @@ import React, { useContext, useCallback, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import Header from "./header";
+import ATag from "./aTag";
 import { GlobalContext } from "../context/global-provider";
 import "../styles/layout.css";
 
@@ -41,13 +42,13 @@ const Layout = ({ children }) => {
           <FooterContainer>
             © {new Date().getFullYear()}, Built with
             {` `}
-            <a href="https://www.gatsbyjs.com" target="_blank" rel="noopener noreferrer">
+            <ATag href="https://www.gatsbyjs.com">
               Gatsby
-            </a>
+            </ATag>
             &nbsp;| Background photo from:&nbsp;
-            <a href="http://www.textures4photoshop.com/" target="_blank" rel="noopener noreferrer">
+            <ATag href="http://www.textures4photoshop.com/">
               textures4photoshop
-            </a>
+            </ATag>
           </FooterContainer>
         </ContentContainer>
       </BackgroundWrapper>

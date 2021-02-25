@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import ATag from "../../components/aTag"
 import { Link } from "gatsby";
 import { positionAbsOrigin } from "../styled-utils";
 
@@ -9,7 +10,7 @@ const customBtnStyle = css`
    text-decoration: none;
    text-align: center;
    font-family: Roboto;
-   font-size: 1.5rem;
+   font-size: 1.4rem;
 `;
 
 const btnContainerStyle = css`
@@ -27,8 +28,8 @@ export const CustomBtnContainer = styled.div`
    transition-property: box-shadow, transform;
 
    &:hover {
-      transform: scale(1.05) translateY(-.1rem);
-      box-shadow: 0 5px 10px 3px rgba(0, 0, 0, .4);
+      transform: scale(1.1) translateY(-.1rem);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
    }
 
    &:active {
@@ -51,6 +52,6 @@ export const CustomBtnLink = styled(Link)`
    ${customBtnStyle}
 `;
 
-export const CustomBtnHyperLink = styled.a`
+export const CustomBtnHyperLink = styled(ATag)`
    ${customBtnStyle}
 `;

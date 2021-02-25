@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContentContainer = styled.div`
    margin: 0 auto;
-   max-width: 960px;
+   max-width: var(--page-max-width);
    padding: 0 1.0875rem 1.45rem;
    flex-grow: 1;
    display: flex;

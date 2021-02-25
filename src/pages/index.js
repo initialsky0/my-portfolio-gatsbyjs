@@ -1,46 +1,18 @@
 import React, { useContext } from "react";
-import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import HomeContents from "../components/home";
+import AboutMeContents from "../components/aboutMe";
 import { GlobalContext } from "../context/global-provider";
-import { HomeContainer, 
-         HomeTextContainer, 
-         HomeLinkContainer,
-         AboutMeContainer } from "../styles/pages/index-title-styled";
-import { CustomBtn } from "../components/customBtn";
 
-const placeHomeContents = (navContents, updateCurrentSection) => (
-  <HomeContainer>
-    <HomeTextContainer>Welcome <br/> to <br/> My Portfolio</HomeTextContainer>
-    <HomeLinkContainer>
-      {navContents.map((content, index) => (
-        index 
-        ? (
-            <CustomBtn key={`HomeBtn${index}`} path={content.route} onClick={() => updateCurrentSection(index)}>
-              {content.navTitle}
-            </CustomBtn> 
-          )
-        : null
-      ))}
-    </HomeLinkContainer>
-  </HomeContainer>
-);
-
-const placeAboutMeContents = () => (
-  <AboutMeContainer>Hello</AboutMeContainer>
-);
 
 const IndexPage = () => {
-  const { navContents } = useSiteMetadata();
-  const { currentSection, updateCurrentSection } = useContext(GlobalContext);
+  const { currentSection } = useContext(GlobalContext);
 
   return (
     <Layout>
-      <SEO title={navContents[0].navTitle} />
-      { currentSection === 1 
-        ? placeAboutMeContents() 
-        : placeHomeContents(navContents, updateCurrentSection)
-      }
+      <SEO title={currentSection === 1 ? `About Me` : `Home`} />
+      { currentSection === 1 ? <AboutMeContents /> : <HomeContents /> }
     </Layout>
   )
 };

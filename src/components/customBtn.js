@@ -1,13 +1,11 @@
 import React from "react";
 import { CustomBtnContainer, CustomBtnLink, CustomBtnHyperLink } from "../styles/components/cutomBtn-styled";
 
-export const CustomBtn = ({ path, aTag, onClick, children }) => {
+const CustomBtn = ({ path, aTag, onClick, children }) => {
    const dispLink = aTag 
       ? (
          <CustomBtnHyperLink 
-            href={path} 
-            target={`_blank`} 
-            rel={`noopener noreferrer`}
+            href={path}
             onClick={onClick}
          >
             {children}
@@ -25,3 +23,4 @@ export const CustomBtn = ({ path, aTag, onClick, children }) => {
    );
 };
 
+export default CustomBtn;

@@ -12,7 +12,7 @@ import BackgroundSelection from "./backgroundSelection";
 
 const Header = ({ siteTitle }) => {
   // Get nav state
-  const { navState } = useContext(GlobalContext);
+  const { navState, updateCurrentSection } = useContext(GlobalContext);
   // Obtain header height
   const headerRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(null);
@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => {
       <Navbar headerHeight={headerHeight} />
       <HeaderContainer >
         <HeaderTitle navState={navState}>
-          <Link to="/" >
+          <Link to="/" onClick={() => updateCurrentSection(0)} >
             {siteTitle}
           </Link>
         </HeaderTitle>

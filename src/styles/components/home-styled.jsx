@@ -1,17 +1,12 @@
-import styled, { css } from "styled-components";
-import { CustomBtnContainer } from "../components/cutomBtn-styled";
+import styled from "styled-components";
+import { CustomBtnContainer } from "./cutomBtn-styled";
+import { containerStyles } from "../pages/index-styled";
 import { showContent,
          fadeIn,
          fadeInTopAnimation,
          fadeInBottomAnimation,
          fadeInLeftAnimation,
          fadeInRightAnimation } from "../animation-styled";
-
-const containerStyles = css`
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-`;
 
 export const HomeContainer = styled.div`
    ${containerStyles}
@@ -80,10 +75,4 @@ export const HomeLinkContainer = styled.div`
          animation: fade-in-from-right .5s .7s  backwards;
       }
    }
-`;
-
-/* --------------------------------------About Me-------------------------------------------- */
-
-export const AboutMeContainer = styled.div`
-   ${containerStyles}
 `;

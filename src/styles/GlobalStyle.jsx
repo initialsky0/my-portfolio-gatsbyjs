@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
       --secondary-color: #fd5e53;
       --tertiary-color: #070b34;
       --white-cloud: #f6f6f6;
+
+      --page-max-width: 960px;
    }
 
    html, body, #___gatsby {
