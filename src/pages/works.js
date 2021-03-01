@@ -1,15 +1,14 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React from "react";
+import WorksDisplay from "../components/worksDisplay";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { SectionTitle } from "../styles/styled-utils";
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Page two" />
-    <h1 style={{width: `100%`}}>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <SEO title="Works" />
+    <SectionTitle>My Works</SectionTitle>
+    <WorksDisplay />
   </Layout>
 )
 

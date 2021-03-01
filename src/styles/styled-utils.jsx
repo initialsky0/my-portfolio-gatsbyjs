@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { fadeInLeftAnimation } from "./animation-styled";
 
 export const generateTextAnimation = (maxTextLength, element, animationName, duration, delay=0, extraProps=``) => {
    let animationStyles = ``;
@@ -24,7 +25,15 @@ export const positionAbsOrigin = css`
    left: 0;
 `;
 
+export const containerOverlayLight = css`
+   background-color: rgba(255, 255, 255, .5);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+`;
+
 export const SectionTitle = styled.h2`
    text-align: center;
    font-size: 2.5rem;
+   margin-bottom: 2.8rem;
+   ${fadeInLeftAnimation}
+   animation: fade-in-from-left .7s cubic-bezier(.4, .1, .2, 1.5);
 `;
