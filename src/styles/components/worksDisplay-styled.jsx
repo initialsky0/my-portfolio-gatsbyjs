@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { containerOverlayLight } from "../styled-utils";
 import { CardContainer } from "./card-styled";
+import { flipAnimation } from "../animation-styled";
+import { generateTextAnimation } from "../styled-utils";
 
 export const WorksDispContainer = styled.div`
    display: flex;
@@ -10,8 +12,20 @@ export const WorksDispContainer = styled.div`
    padding: 1rem;
    border-radius: 10px;
    ${containerOverlayLight}
+   ${flipAnimation}
 
    ${CardContainer} {
-      margin: .5rem;
+      margin: 1rem;
    }
+   
+   ${({ numOfCards }) => 
+      generateTextAnimation(
+         numOfCards,
+         CardContainer,
+         `flip`,
+         .5,
+         .1,
+         `ease-in-out`,
+         `backwards`
+   )}
 `;

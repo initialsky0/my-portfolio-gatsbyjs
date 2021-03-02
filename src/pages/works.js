@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { SectionTitle } from "../styles/styled-utils";
 
-const SecondPage = () => (
+const WorksPage = () => (
   <Layout>
     <SEO title="Works" />
     <SectionTitle>My Works</SectionTitle>
@@ -12,4 +12,4 @@ const SecondPage = () => (
   </Layout>
 )
 
-export default SecondPage
+export default WorksPage;

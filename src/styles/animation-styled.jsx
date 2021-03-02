@@ -117,6 +117,18 @@ export const fadeInBottomAnimation = css`
    }
 `;
 
+export const flipAnimation = css`
+   @keyframes flip {
+      from {
+         transform: rotate3d(0, 1, 0, 90deg);
+      }
+
+      to {
+         transform: rotate3d(0, 1, 0, 0deg);
+      }
+   }
+`;
+
 export const bounceAnimation = css`
    @keyframes bounce {
       0% {

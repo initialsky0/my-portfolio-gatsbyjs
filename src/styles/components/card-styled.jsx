@@ -19,15 +19,24 @@ export const CardContainer = styled.div`
    width: 200px;
    height: 300px;
    border-radius: 8px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+   backface-visibility: hidden;
+   transition: all .35s;
+   transition-property: transform, box-shadow;
    ${cardBackgroundType1}
 
+   &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+   }
+
    img {
-      padding: .5rem;
+      padding: 0 .5rem;
    }
 `;
 
 export const CardTitle = styled.h4`
-   margin: 1rem 0 .5rem;
+   margin: 1rem .5rem .5rem;
    text-align: center;
 `;
 
@@ -47,7 +56,7 @@ export const StyledALink = styled(ATag)`
 
    svg {
       height: 90%;
-      transition: all .15s;
+      transition: all .2s;
       transition-property: height, color;
    }
 

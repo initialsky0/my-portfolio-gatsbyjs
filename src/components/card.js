@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
+import Img from "gatsby-image/withIEPolyfill";
 import { CardContainer, 
          CardTitle, 
          CardBtnContainer,
@@ -7,11 +7,11 @@ import { CardContainer,
 import { StyledLinkIcon,
          StyledGithubIcon } from "../styles/components/svg-styled";
 
-const Card = ({ fluid, linkPaths }) => {
+const Card = ({ fluid, title, linkPaths }) => {
    return (
       <CardContainer>
-         <CardTitle>Title</CardTitle>
-         <Img fluid={fluid} />
+         <CardTitle>{title}</CardTitle>
+         <Img objectFit={`contain`} fluid={fluid} />
          <CardBtnContainer>
             <StyledALink href={linkPaths.github}>
                <StyledGithubIcon />
