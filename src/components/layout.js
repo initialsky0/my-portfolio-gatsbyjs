@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import Header from "./header";
 import ATag from "./aTag";
+import GlobalStyle from "../styles/GlobalStyle";
 import { GlobalContext } from "../context/global-provider";
 import "../styles/layout.css";
 
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalStyle />
       <BackgroundWrapper>
         <SlidingBGContainer imgUrl={backgroundImage} backgroundNum={backgroundSelected} />
         <Header siteTitle={title || `Title`} />

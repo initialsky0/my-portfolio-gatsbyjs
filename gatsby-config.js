@@ -7,7 +7,7 @@ module.exports = {
       { route: `/`, navTitle: `Home` },
       { route: `/`, navTitle: `About Me` },
       { route: `/works`, navTitle: `My Works` },
-      { route: `/`, navTitle: `Contact` }
+      { route: `/contact`, navTitle: `Contact` }
     ],
   },
   plugins: [

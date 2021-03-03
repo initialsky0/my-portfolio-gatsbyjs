@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CustomBtnContainer } from "./cutomBtn-styled";
-import { containerStyles } from "../pages/index-styled";
+import { containerStyles } from "../styled-utils";
 import { showContent,
          fadeIn,
          fadeInTopAnimation,

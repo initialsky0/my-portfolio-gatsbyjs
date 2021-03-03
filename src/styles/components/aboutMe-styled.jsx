@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { containerStyles } from "../pages/index-styled";
-import { containerOverlayLight } from "../styled-utils";
+import { containerOverlayLight, containerStyles } from "../styled-utils";
 import { fadeIn } from "../animation-styled";
 
 export const AboutMeContainer = styled.div`
@@ -13,7 +12,6 @@ export const AboutMeContent = styled.div`
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    gap: 1rem;
-   border-radius: 10px;
    ${containerOverlayLight}
    ${fadeIn}
    animation: fade-in 1s .3s backwards;

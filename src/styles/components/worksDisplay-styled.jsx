@@ -10,7 +10,6 @@ export const WorksDispContainer = styled.div`
    flex-wrap: wrap;
    width: 100%;
    padding: 1rem;
-   border-radius: 10px;
    ${containerOverlayLight}
    ${flipAnimation}
 

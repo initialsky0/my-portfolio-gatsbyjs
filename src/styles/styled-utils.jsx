@@ -14,6 +14,12 @@ export const generateTextAnimation = (maxTextLength, element, animationName, dur
    return css`${animationStyles}`;
 }
 
+export const containerStyles = css`
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+`;
+
 export const glassyBackground = css`
    background-color: rgba(255, 255, 255, .1);
    backdrop-filter: blur(3px);
@@ -26,6 +32,7 @@ export const positionAbsOrigin = css`
 `;
 
 export const containerOverlayLight = css`
+   border-radius: 10px;
    background-color: rgba(255, 255, 255, .5);
    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
 `;
