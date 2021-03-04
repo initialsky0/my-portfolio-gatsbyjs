@@ -24,7 +24,6 @@ export const WorksDispContainer = styled.div`
          `flip`,
          .5,
          .1,
-         `ease-in-out`,
-         `backwards`
+         `ease-in-out backwards`,
    )}
 `;

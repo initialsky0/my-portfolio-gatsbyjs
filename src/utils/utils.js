@@ -33,4 +33,4 @@ export const parseStringToHtml = htmlString => {
    }
 
    return parsedString;
-}
+};

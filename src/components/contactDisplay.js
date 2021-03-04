@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/global-provider";
+import useContactData from "../hooks/useContactData";
 import { StyledMailIcon, 
          StyledPhoneIcon, 
          StyledLinkedinIcon,
@@ -6,25 +8,58 @@ import { StyledMailIcon,
          StyledALink,
          StyledRegATag } from "../styles/components/svg-styled";
 import { ContactDispContainer, 
-         ContactItemLists } from "../styles/components/contactDisplay-styled";
+         ContactItemLists,
+         ContactItemContainer } from "../styles/components/contactDisplay-styled";
 
-const ContactDisplay = () => (
-   <ContactDispContainer>
-      <ContactItemLists>
-         <StyledRegATag href={`mailto:initialsky.dev@gmail.com`} bgSelected={0}>
-            <StyledMailIcon />
-         </StyledRegATag>
-         <StyledRegATag href={`tel:111-111-1111`} bgSelected={0}>
-            <StyledPhoneIcon />
-         </StyledRegATag>
-         <StyledALink href={`https://github.com/initialsky0`} bgSelected={0}>
-            <StyledGithubIcon />
-         </StyledALink>
-         <StyledALink href={`https://www.linkedin.com/in/dong-yu-b26b24113/`} bgSelected={0}>
-            <StyledLinkedinIcon />
-         </StyledALink>
-      </ContactItemLists>
-   </ContactDispContainer>
-);
+const ContactDisplay = () => {
+   const { contents } = useContactData();
+   const { backgroundSelected } = useContext(GlobalContext);
+   return (
+      <ContactDispContainer>
+         <ContactItemLists numOfContact={Object.keys(contents).length}>
+            {
+               `mail` in contents 
+               ? (<ContactItemContainer>
+                     <h4>mail</h4>
+                     <StyledRegATag href={contents.mail} bgSelected={backgroundSelected}>
+                        <StyledMailIcon />
+                     </StyledRegATag>
+                  </ContactItemContainer>)
+               : null
+            }
+            {
+               `phone` in contents 
+               ? (<ContactItemContainer>
+                     <h4>phone</h4>
+                     <StyledRegATag href={contents.phone} bgSelected={backgroundSelected}>
+                        <StyledPhoneIcon />
+                     </StyledRegATag>
+                  </ContactItemContainer>)
+               : null
+            }
+            {
+               `github` in contents
+               ? (<ContactItemContainer>
+                     <h4>github</h4>
+                     <StyledALink href={contents.github} bgSelected={backgroundSelected}>
+                        <StyledGithubIcon />
+                     </StyledALink>
+                  </ContactItemContainer>)
+               : null
+            }
+            {
+               `linkedin` in contents
+               ? (<ContactItemContainer>
+                     <h4>linkedin</h4>
+                     <StyledALink href={contents.linkedin} bgSelected={backgroundSelected}>
+                        <StyledLinkedinIcon />
+                     </StyledALink>
+                  </ContactItemContainer>)
+               : null
+            }
+         </ContactItemLists>
+      </ContactDispContainer>
+   );
+};
 
 export default ContactDisplay;

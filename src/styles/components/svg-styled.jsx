@@ -73,4 +73,10 @@ export const StyledRegATag = styled.a`
          color: var(--phone-green);
       }
    }
+
+   &:hover {
+      ${StyledMailIcon} {
+         color: var(--github-black);
+      }
+   }
 `

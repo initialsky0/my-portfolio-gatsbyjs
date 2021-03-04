@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 import { fadeInLeftAnimation } from "./animation-styled";
 
-export const generateTextAnimation = (maxTextLength, element, animationName, duration, delay=0, timing=`linear`, extraProps=``) => {
+export const generateTextAnimation = (maxTextLength, element, animationName, duration, delay=0, extraProps=``) => {
    let animationStyles = ``;
    for(let i = 0; i < maxTextLength; i++) {
       const actualDelay = delay?.offset ? delay.offset + (i * delay.value) : i * delay;
       animationStyles += `
          ${element}:nth-of-type(${i+1}) {
-            animation: ${animationName} ${duration}s ${timing} ${actualDelay}s ${extraProps};
+            animation: ${animationName} ${duration}s ${actualDelay}s ${extraProps};
          }
       `
    }
