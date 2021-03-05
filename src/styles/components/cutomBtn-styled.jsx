@@ -14,9 +14,17 @@ const customBtnStyle = css`
 `;
 
 const btnContainerStyle = css`
-   background-color: var(--secondary-color);
+   background-color: ${({ bgSelected }) => bgSelected === 0 
+      ? `var(--secondary-color)`
+      : bgSelected === 1 
+      ? `var(--tertiary-color)`
+      : `var(--primary-color)`
+   };
    border-radius: 10px;
-   box-shadow: 0 5px 9px 2px rgba(0, 0, 0, .3);
+   box-shadow: ${({ bgSelected }) => bgSelected === 2 
+      ? `0 5px 9px 2px rgba(255, 255, 255, .3)`
+      : `0 5px 9px 2px rgba(0, 0, 0, .3)`
+   };
 `;
 
 export const CustomBtnContainer = styled.div`
@@ -29,12 +37,18 @@ export const CustomBtnContainer = styled.div`
 
    &:hover {
       transform: scale(1.1) translateY(-.1rem);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+      box-shadow: ${({ bgSelected }) => bgSelected === 2 
+         ? `0 7px 15px rgba(255, 255, 255, .5)`
+         : `0 10px 15px rgba(0, 0, 0, .4)`
+      };
    }
 
    &:active {
       transform: scale(.95) translateY(.1rem);
-      box-shadow: 0 5px 5px 1px rgba(0, 0, 0, .3);
+      box-shadow: ${({ bgSelected }) => bgSelected === 2 
+         ? `0 5px 5px 1px rgba(255, 255, 255, .3)`
+         : `0 5px 5px 1px rgba(0, 0, 0, .3)`
+      };
    }
 
    &::before {

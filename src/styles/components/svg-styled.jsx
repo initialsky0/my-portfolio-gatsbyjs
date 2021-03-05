@@ -15,8 +15,14 @@ export const IconContainerStyle = css`
    align-items: center;
    justify-content: center;
    backface-visibility: hidden;
-   transition: transform .2s;
-   background-color: ${({ bgSelected }) => bgSelected === 0 ? `var(--secondary-color)` : `var(--tertiary-color)`};
+   transition: transform .2s, background-color .5s;
+   background-color: ${({ bgSelected }) => 
+      bgSelected === 0 
+         ? `var(--secondary-color)` 
+         : bgSelected === 1 
+         ? `var(--tertiary-color)` 
+         : `var(--primary-color)` 
+   };
 
    &:hover {
       transform: scale(1.15);
@@ -45,38 +51,8 @@ export const StyledLinkedinIcon = styled(Linkedin)`
 
 export const StyledALink = styled(ATag)`
    ${IconContainerStyle}
-
-   svg {
-      transition: color .2s;
-   }
-
-   &:hover {
-      ${StyledGithubIcon} {
-         color: var(--github-black);
-      }
-
-      ${StyledLinkIcon} {
-         color: var(--link-blue);
-      }
-
-      ${StyledLinkedinIcon} {
-         color: var(--linkedin-cyan);
-      }
-   }
 `;
 
 export const StyledRegATag = styled.a`
    ${IconContainerStyle}
-
-   &:hover {
-      ${StyledPhoneIcon} {
-         color: var(--phone-green);
-      }
-   }
-
-   &:hover {
-      ${StyledMailIcon} {
-         color: var(--github-black);
-      }
-   }
 `

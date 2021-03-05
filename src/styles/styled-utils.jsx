@@ -37,6 +37,12 @@ export const containerOverlayLight = css`
    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
 `;
 
+export const containerOverlayDark = css`
+   border-radius: 10px;
+   background-color: rgba(0, 0, 0, .5);
+   box-shadow: 0 5px 15px rgba(255, 255, 255, .3);
+`;
+
 export const SectionTitle = styled.h2`
    text-align: center;
    font-size: 2.5rem;

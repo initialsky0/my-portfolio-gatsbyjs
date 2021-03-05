@@ -8,14 +8,14 @@ import { GlobalContext } from "../context/global-provider";
 
 
 const IndexPage = ({ data: { allMarkdownRemark: { edges }}}) => {
-  const { currentSection } = useContext(GlobalContext);
-  const { node } = edges[0];
-  return (
-    <Layout>
-      <SEO title={currentSection === 1 ? `About Me` : `Home`} />
-      { currentSection === 1 ? <AboutMeContents node={node} /> : <HomeContents /> }
-    </Layout>
-  )
+   const { currentSection } = useContext(GlobalContext);
+   const { node } = edges[0];
+   return (
+      <Layout>
+         <SEO title={currentSection === 1 ? `About Me` : `Home`} />
+         { currentSection === 1 ? <AboutMeContents node={node} /> : <HomeContents /> }
+      </Layout>
+   );
 };
 
 export const query = graphql`

@@ -11,6 +11,11 @@ export const WorksDispContainer = styled.div`
    width: 100%;
    padding: 1rem;
    ${containerOverlayLight}
+   transition: box-shadow .5s;
+   ${({ bgSelected }) => bgSelected === 2 
+      ? `box-shadow: 0 5px 15px rgba(255, 255, 255, .5);` 
+      : null
+   }
    ${flipAnimation}
 
    ${CardContainer} {

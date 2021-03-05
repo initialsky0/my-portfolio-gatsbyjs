@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle bgSelected={backgroundSelected} />
       <BackgroundWrapper>
         <SlidingBGContainer imgUrl={backgroundImage} backgroundNum={backgroundSelected} />
         <Header siteTitle={title || `Title`} />

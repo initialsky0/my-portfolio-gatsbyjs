@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/global-provider";
 import { CustomBtnContainer, CustomBtnLink, CustomBtnHyperLink } from "../styles/components/cutomBtn-styled";
 
 const CustomBtn = ({ path, aTag, onClick, children }) => {
+   const { backgroundSelected } = useContext(GlobalContext);
    const dispLink = aTag 
       ? (
          <CustomBtnHyperLink 
@@ -17,7 +19,7 @@ const CustomBtn = ({ path, aTag, onClick, children }) => {
          </CustomBtnLink>
       )
    return (
-      <CustomBtnContainer>
+      <CustomBtnContainer bgSelected={backgroundSelected}>
          {dispLink}
       </CustomBtnContainer>
    );

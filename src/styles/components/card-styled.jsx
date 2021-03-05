@@ -5,10 +5,15 @@ const cardBackgroundType1 = css`
    filter: brightness(1.1);
 `;
 
-// const cardBackgroundType2 = css`
-//    background-color: var(--secondary-color);
-//    filter: brightness(1.3);
-// `;
+const cardBackgroundType2 = css`
+   background-color: var(--secondary-color);
+   filter: brightness(1.3);
+`;
+
+const cardBackgroundType3 = css`
+   box-shadow: 0 3px 10px rgba(255, 255, 255, .5);
+   background-color: var(--tertiary-color);
+`;
 
 export const CardContainer = styled.div`
    display: flex;
@@ -21,11 +26,19 @@ export const CardContainer = styled.div`
    backface-visibility: hidden;
    transition: all .35s;
    transition-property: transform, box-shadow;
-   ${cardBackgroundType1}
+   ${({ bgSelected }) => bgSelected === 0 
+      ? cardBackgroundType1 
+      : bgSelected === 1
+      ? cardBackgroundType2 
+      : cardBackgroundType3
+   }
 
    &:hover {
       transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+      ${({ bgSelected }) => bgSelected === 2 
+         ? `box-shadow: 0 5px 15px rgba(255, 255, 255, .6);`
+         : `box-shadow: 0 5px 15px rgba(0, 0, 0, .3);`
+      }
    }
 
    img {

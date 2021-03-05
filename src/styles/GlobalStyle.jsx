@@ -9,16 +9,15 @@ const GlobalStyle = createGlobalStyle`
 
       --icon-light: #f3f3f3;
 
-      --link-blue: #0645ad;
-      --github-black: #030303;
-      --linkedin-cyan: #0e76a8;
-      --phone-green: #28cc07;
-
       --page-max-width: 960px;
    }
 
    html, body, #___gatsby {
       height: 100%;
+      ${({ bgSelected }) => bgSelected === 2 
+         ? `color: hsla(0, 0%, 100%, .9)` 
+         : `color: hsla(0, 0%, 0%, 0.8)`
+      }
    }
 
    #___gatsby {

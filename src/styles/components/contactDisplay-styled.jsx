@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { fadeInTopAnimation } from "../animation-styled";
-import { containerOverlayLight, generateTextAnimation } from "../styled-utils";
+import { containerOverlayLight, containerOverlayDark, generateTextAnimation } from "../styled-utils";
 
 export const ContactDispContainer = styled.div`
-   ${containerOverlayLight}
    padding: 2rem;
+   transition: all .5s;
+   transition-property: background-color, box-shadow;
+   ${({ bgSelected }) => bgSelected === 2 ? containerOverlayDark : containerOverlayLight}
 `;
 
 export const ContactItemContainer = styled.div`

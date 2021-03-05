@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { containerOverlayLight, containerStyles } from "../styled-utils";
+import { containerOverlayLight, containerOverlayDark, containerStyles } from "../styled-utils";
 import { fadeIn } from "../animation-styled";
 
 export const AboutMeContainer = styled.div`
@@ -12,7 +12,9 @@ export const AboutMeContent = styled.div`
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    gap: 1rem;
-   ${containerOverlayLight}
+   transition: all .5s;
+   transition-property: background-color, box-shadow;
+   ${({ bgSelected }) => bgSelected === 2 ? containerOverlayDark : containerOverlayLight}
    ${fadeIn}
    animation: fade-in 1s .3s backwards;
 `;

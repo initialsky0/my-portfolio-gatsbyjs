@@ -11,52 +11,47 @@ import { ContactDispContainer,
          ContactItemLists,
          ContactItemContainer } from "../styles/components/contactDisplay-styled";
 
+const getIcon = type => {
+   switch(type) {
+      case `mail`:
+         return (<StyledMailIcon />);
+      case `phone`:
+         return (<StyledPhoneIcon />);
+      case `github`:
+         return (<StyledGithubIcon />);
+      case `linkedin`:
+         return (<StyledLinkedinIcon />);
+      default:
+         return null;
+   };
+};
+
 const ContactDisplay = () => {
    const { contents } = useContactData();
+   const contactTypes = Object.keys(contents);
    const { backgroundSelected } = useContext(GlobalContext);
+
    return (
-      <ContactDispContainer>
-         <ContactItemLists numOfContact={Object.keys(contents).length}>
+      <ContactDispContainer bgSelected={backgroundSelected}>
+         <ContactItemLists numOfContact={contactTypes.length}>
             {
-               `mail` in contents 
-               ? (<ContactItemContainer>
-                     <h4>mail</h4>
-                     <StyledRegATag href={contents.mail} bgSelected={backgroundSelected}>
-                        <StyledMailIcon />
-                     </StyledRegATag>
-                  </ContactItemContainer>)
-               : null
+               contactTypes.map(type => (
+                  <ContactItemContainer key={`contact-${type}`}>
+                     <h4>{type}</h4>
+                     { 
+                        // check for the correct a tag component for corresponding contact type
+                        type === `mail` || type === `phone` 
+                           ?  <StyledRegATag href={contents[type]} bgSelected={backgroundSelected}>
+                                 {getIcon(type)}
+                              </StyledRegATag>
+                           :  <StyledALink href={contents[type]} bgSelected={backgroundSelected}>
+                                 {getIcon(type)}
+                              </StyledALink> 
+                     }
+                  </ContactItemContainer>
+               ))
             }
-            {
-               `phone` in contents 
-               ? (<ContactItemContainer>
-                     <h4>phone</h4>
-                     <StyledRegATag href={contents.phone} bgSelected={backgroundSelected}>
-                        <StyledPhoneIcon />
-                     </StyledRegATag>
-                  </ContactItemContainer>)
-               : null
-            }
-            {
-               `github` in contents
-               ? (<ContactItemContainer>
-                     <h4>github</h4>
-                     <StyledALink href={contents.github} bgSelected={backgroundSelected}>
-                        <StyledGithubIcon />
-                     </StyledALink>
-                  </ContactItemContainer>)
-               : null
-            }
-            {
-               `linkedin` in contents
-               ? (<ContactItemContainer>
-                     <h4>linkedin</h4>
-                     <StyledALink href={contents.linkedin} bgSelected={backgroundSelected}>
-                        <StyledLinkedinIcon />
-                     </StyledALink>
-                  </ContactItemContainer>)
-               : null
-            }
+            
          </ContactItemLists>
       </ContactDispContainer>
    );
