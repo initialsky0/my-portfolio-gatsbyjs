@@ -20,6 +20,16 @@ export const HomeTextContainer = styled.h1`
    font-size: 6rem;
    ${fadeInTopAnimation}
    animation: fade-in-from-top 1s both;
+
+   @media only screen and (max-width: 800px) {
+      font-size: 5.5rem;
+      margin: 0 0 8vh;
+   }
+
+   @media only screen and (max-width: 600px) {
+      font-size: 3rem;
+      margin: 0 0 6vh;
+   }
 `;
 
 export const HomeLinkContainer = styled.div`
@@ -27,6 +37,14 @@ export const HomeLinkContainer = styled.div`
    align-items: center;
    justify-content: space-evenly;
    width: 100%;
+
+   @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      
+      ${CustomBtnContainer}:not(:last-child) {
+         margin-bottom: 1rem;
+      }
+   }
 
    ${CustomBtnContainer}:nth-of-type(1) {
       ${showContent}

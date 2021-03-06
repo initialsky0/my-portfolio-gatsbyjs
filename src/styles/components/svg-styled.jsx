@@ -29,6 +29,9 @@ export const IconContainerStyle = css`
    }
 `;
 
+// svg files are downloaded from Font Awesome in compliance with the free license:
+// https://fontawesome.com/license/free
+
 export const StyledLinkIcon = styled(LinkIcon)`
    color: var(--icon-light);
 `;

@@ -7,9 +7,9 @@ const activeBkgdFilter = css`
 `;
 
 export const BkgdSelectorBox = styled.div`
-   height: 25px;
-   width: 25px;
-   border-radius: 5px;
+   height: 1.4rem;
+   width: 1.4rem;
+   border-radius: 6px;
    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, .3);
    transition: all .3s;
    ${({ backgroundNum }) => selectBackgroundFilter(backgroundNum)}

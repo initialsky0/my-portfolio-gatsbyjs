@@ -16,4 +16,8 @@ export const ContentContainer = styled.div`
 
 export const FooterContainer = styled.footer`
    margin-top: 2rem;
+
+   @media only screen and (max-width: 960px) {
+      font-size: .9rem;
+   }
 `;

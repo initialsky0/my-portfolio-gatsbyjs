@@ -39,7 +39,7 @@ export const CustomBtnContainer = styled.div`
       transform: scale(1.1) translateY(-.1rem);
       box-shadow: ${({ bgSelected }) => bgSelected === 2 
          ? `0 7px 15px rgba(255, 255, 255, .5)`
-         : `0 10px 15px rgba(0, 0, 0, .4)`
+         : `0 8px 15px rgba(0, 0, 0, .4)`
       };
    }
 

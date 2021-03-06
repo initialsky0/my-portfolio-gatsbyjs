@@ -47,10 +47,15 @@ const Layout = ({ children }) => {
             <ATag href="https://www.gatsbyjs.com">
               Gatsby
             </ATag>
-            &nbsp;| Background photo from:&nbsp;
+            &nbsp;| Background photo from&nbsp;
             <ATag href="http://www.textures4photoshop.com/">
               textures4photoshop
             </ATag>
+            &nbsp;|&nbsp;
+            <ATag href="https://fontawesome.com/license/free">
+              License
+            </ATag>
+            &nbsp;for icons from Font Awesome 
           </FooterContainer>
         </ContentContainer>
       </BackgroundWrapper>

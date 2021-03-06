@@ -47,6 +47,15 @@ export const NavbarLink = styled(Link)`
    span {
       display: inline-block;
    }
+
+   @media only screen and (max-width: 600px) {
+      padding: .8rem;
+      font-size: 1rem;
+   }
+
+   @media only screen and (max-width: 480px) {
+      padding: .3rem;
+   }
 `;
 
 export const NavbarContainer = styled.nav`
@@ -79,5 +88,11 @@ export const NavbarContainer = styled.nav`
    ${NavbarLink}:hover {
       ${bounceAnimation}
       ${({ contents }) => generateTextAnimation(getMaxLength(contents), `span`, `bounce`, .5, .05, `infinite`)}
+   }
+
+   @media only screen and (max-width: 960px) {
+      a:first-child {
+         margin-left: 1rem;
+      }
    }
 `;
