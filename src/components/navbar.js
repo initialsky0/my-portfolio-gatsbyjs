@@ -14,7 +14,6 @@ const Navbar = ({ headerRef }) => {
    const [headerHeight, setHeaderHeight] = useState(null);
    // Get the height of Navbar onload and resize
    const detectHeaderHeight = useCallback(() => {
-      console.log('renew sizing');
       if(headerRef?.current?.clientHeight) setHeaderHeight(headerRef.current.clientHeight);
    }, [headerRef, setHeaderHeight]);
    useLayoutEffect(() => {

@@ -38,6 +38,8 @@ export const HeaderTitle = styled.h1`
       color: var(--white-cloud);
       text-decoration: none;
    }
+
+   
 `;
 
 export const HeaderUtilities = styled.div`

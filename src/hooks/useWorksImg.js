@@ -7,7 +7,7 @@ const useWorksImg = () => {
             edges {
                node {
                   childImageSharp {
-                     fluid(maxWidth: 300) {
+                     fluid(maxWidth: 900) {
                         ...GatsbyImageSharpFluid
                      }
                   }

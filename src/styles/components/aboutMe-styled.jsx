@@ -17,6 +17,11 @@ export const AboutMeContent = styled.div`
    ${({ bgSelected }) => bgSelected === 2 ? containerOverlayDark : containerOverlayLight}
    ${fadeIn}
    animation: fade-in 1s .3s backwards;
+
+   @media only screen and (max-width: 750px) {
+      grid-template-columns: unset;
+      grid-template-rows: repeat(auto-fill, 1fr);
+   }
 `;
 
 export const AboutMeTextContainer = styled.div`

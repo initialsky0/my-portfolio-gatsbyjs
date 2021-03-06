@@ -48,9 +48,9 @@ export const NavbarLink = styled(Link)`
       display: inline-block;
    }
 
-   @media only screen and (max-width: 600px) {
-      padding: .8rem;
-      font-size: 1rem;
+   @media only screen and (max-width: 650px) {
+      padding: .5rem;
+      font-size: 1.1rem;
    }
 
    @media only screen and (max-width: 480px) {
