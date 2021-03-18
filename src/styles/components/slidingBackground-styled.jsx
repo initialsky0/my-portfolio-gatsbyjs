@@ -44,9 +44,11 @@ export const SlidingBGContainer = styled.div`
    top: 0;
    left: 0;
    z-index: -9999;
-   background: url(${({ imgUrl }) => imgUrl }) repeat-x;
-   height: 100vh;
-   width: 12000px;
+   background: url(${({ imgUrl }) => imgUrl });
+   background-repeat: space;
+   background-size: 3000px auto;
+   height: 100%;
+   width: 6000px;
    transition: box-shadow 1s;
    ${({ backgroundNum }) => selectBackgroundFilter(backgroundNum)}
    ${slidingBGAnimation}

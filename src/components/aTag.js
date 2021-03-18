@@ -1,7 +1,8 @@
 import React from "react";
+import { ATagContainer } from "../styles/components/aTag-styled";
 
 const ATag = ({ href, onClick, children, className }) => (
-   <a 
+   <ATagContainer 
       className={className}
       href={href} 
       target="_blank" 
@@ -9,7 +10,7 @@ const ATag = ({ href, onClick, children, className }) => (
       onClick={onClick}
    >
       {children}
-   </a>
+   </ATagContainer>
 );
 
 export default ATag;

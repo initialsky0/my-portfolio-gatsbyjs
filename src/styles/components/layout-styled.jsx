@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {ATagContainer, aTagStyles} from "./aTag-styled";
 
 export const ContentContainer = styled.div`
    margin: 0 auto;
@@ -16,6 +17,10 @@ export const ContentContainer = styled.div`
 
 export const FooterContainer = styled.footer`
    margin-top: 2rem;
+
+   ${ATagContainer} {
+      ${aTagStyles}
+   }
 
    @media only screen and (max-width: 960px) {
       font-size: .9rem;

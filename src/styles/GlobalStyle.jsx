@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { ATagContainer } from "./components/aTag-styled";
 
 const GlobalStyle = createGlobalStyle`
    :root {
@@ -14,8 +15,28 @@ const GlobalStyle = createGlobalStyle`
    html, body, #___gatsby {
       height: 100%;
       ${({ bgSelected }) => bgSelected === 2 
-         ? `color: hsla(0, 0%, 100%, .9)` 
-         : `color: hsla(0, 0%, 0%, 0.8)`
+         ? `color: hsla(0, 0%, 100%, .9);` 
+         : `color: hsla(0, 0%, 0%, 0.8);`
+      }
+
+      ${ATagContainer} {
+         ${({ bgSelected }) => bgSelected === 0 
+            ? `color: var(--secondary-color);` 
+            : bgSelected === 1 
+            ? `color: var(--tertiary-color);
+               text-decoration: underline;` 
+            : `color: var(--primary-color);` 
+         }
+
+         &::before {
+            ${({ bgSelected }) => bgSelected === 0 
+               ? `background-color: palegreen;` 
+               : bgSelected === 1 
+               ? `background-color: var(--primary-color);` 
+               : `background-color: var(--secondary-color);` 
+            }
+            
+         }
       }
    }
 

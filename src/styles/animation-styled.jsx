@@ -3,11 +3,11 @@ import { css } from "styled-components";
 export const slidingBackgroundAnimation =css`
    @keyframes slide-background {
       from {
-         transform: translate3d(0, 0, 0);
+         transform: translateX(0);
       }
 
       to {
-         transform: translate3d(-50%, 0, 0);
+         transform: translateX(-3000px);
       }
    }
 `;

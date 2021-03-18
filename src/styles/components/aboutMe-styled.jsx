@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ATagContainer, aTagStyles } from "./aTag-styled";
 import { containerOverlayLight, containerOverlayDark, containerStyles } from "../styled-utils";
 import { fadeIn } from "../animation-styled";
 
@@ -41,8 +42,12 @@ export const AboutMeImgContainer = styled.figure`
    margin: auto;
    padding: 1rem;
    
-   & figcaption {
+   figcaption {
       font-size: .7rem;
       letter-spacing: .03rem;
+   }
+
+   ${ATagContainer} {
+      ${aTagStyles}
    }
 `;
