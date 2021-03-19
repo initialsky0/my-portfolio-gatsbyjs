@@ -12,6 +12,7 @@ export const HomeContainer = styled.div`
    ${containerStyles}
    align-items: center;
    justify-content: center;
+   flex: 1;
 `;
 
 export const HomeTextContainer = styled.h1`
