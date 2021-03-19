@@ -10,7 +10,7 @@ import { showContent,
 
 export const HomeContainer = styled.div`
    ${containerStyles}
-   margin: auto 0;
+   height: calc(100%);
    align-items: center;
    justify-content: center;
 `;

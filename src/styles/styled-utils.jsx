@@ -15,7 +15,6 @@ export const generateTextAnimation = (maxTextLength, element, animationName, dur
 }
 
 export const containerStyles = css`
-   height: 100%;
    display: flex;
    flex-direction: column;
 `;
