@@ -37,7 +37,9 @@
 
 ## Credit and License
 
-- Built with [Gatsby](https://www.gatsbyjs.com/)
-- Icon svgs from [Font Awesome](https://fontawesome.com/), with free [license](https://fontawesome.com/license/free)
+- Built with [Gatsby](https://www.gatsbyjs.com/).
+- Icon svgs from [Font Awesome](https://fontawesome.com/), with free [license](https://fontawesome.com/license/free).
 - Background pictures from [Textures4photoshop](http://www.textures4photoshop.com/).
+- Photos are from [Unsplash](https://unsplash.com/s/photos/tech?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText).
+- For modules please chack package.json.
 
