@@ -12,6 +12,7 @@ export const ContentContainer = styled.div`
 
    & > main {
       flex-grow: 1;
+      height: 100%;
    }
 `;
 
