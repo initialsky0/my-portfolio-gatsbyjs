@@ -11,7 +11,7 @@ export const ContentContainer = styled.div`
    flex-direction: column;
 
    & > main {
-      flex-basis: 100%;
+      flex-grow: 1;
    }
 `;
 
