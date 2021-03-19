@@ -14,7 +14,7 @@
     
     Sliding background picture of sky, and filters are available to change the sky's color representing different times of day.
 
-1.  **Change change Contents fast**
+1.  **Change contents fast**
 
     The navbar items are controlled by navContents in siteMetadata from gatsby-config. The content for about me page can be change by editing aboutMe-content.md in markdowns directory. The contact can also be changed in contact-content.md.
 
@@ -24,9 +24,9 @@
     
     ```shell
     ---
-      section: "works"
-      order: order of the work is placed, int
-      title: work title
+      section: works, str
+      order: order of the work is placed on the page, int
+      title: work title, str
       imgName: image name without extension
       links: { 
               github: github link, 
