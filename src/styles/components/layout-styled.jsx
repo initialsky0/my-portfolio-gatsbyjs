@@ -10,8 +10,9 @@ export const ContentContainer = styled.div`
    justify-content: space-between;
    flex-direction: column;
 
-   & > main {
+   main {
       flex-grow: 1;
+      -webkit-flex-grow: 1;
       height: 100%;
    }
 `;
