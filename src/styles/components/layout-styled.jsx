@@ -12,7 +12,8 @@ export const ContentContainer = styled.div`
 
    main {
       flex: 1;
-      margin: auto 0;
+      display: flex;
+      flex-direction: column;
    }
 `;
 
