@@ -1,7 +1,7 @@
 ---
 section: "works"
-order: 2
-title: "Demo Website 2"
+order: 52
+title: "HTML Course Project 3"
 imgName: "logoNexter"
 links: { 
          github: "https://github.com/initialsky0/course-project-nexter", 

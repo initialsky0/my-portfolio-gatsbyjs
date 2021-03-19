@@ -15,12 +15,24 @@ const Card = ({ fluid, title, linkPaths }) => {
          <CardTitle>{title}</CardTitle>
          <Img objectFit={`contain`} fluid={fluid} />
          <CardBtnContainer>
-            <StyledALink href={linkPaths.github} bgSelected={backgroundSelected} iconSize={40}>
-               <StyledGithubIcon />
-            </StyledALink>
-            <StyledALink href={linkPaths.link} bgSelected={backgroundSelected} iconSize={40}>
-               <StyledLinkIcon />
-            </StyledALink>
+            {
+               linkPaths.github 
+               ? 
+                  <StyledALink href={linkPaths.github} bgSelected={backgroundSelected} iconSize={40}>
+                     <StyledGithubIcon />
+                  </StyledALink>
+               : 
+                  null
+            }
+            {
+               linkPaths.link 
+               ? 
+                  <StyledALink href={linkPaths.link} bgSelected={backgroundSelected} iconSize={40}>
+                     <StyledLinkIcon />
+                  </StyledALink>
+               : 
+                  null
+            }
          </CardBtnContainer>
       </CardContainer>
    );

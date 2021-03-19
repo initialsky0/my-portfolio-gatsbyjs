@@ -1,6 +1,6 @@
 ---
 section: "works"
-order: 0
+order: 1
 title: "Facial Recognition App"
 imgName: "facial"
 links: { 

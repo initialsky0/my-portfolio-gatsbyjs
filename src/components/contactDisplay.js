@@ -36,19 +36,23 @@ const ContactDisplay = () => {
          <ContactItemLists numOfContact={contactTypes.length}>
             {
                contactTypes.map(type => (
-                  <ContactItemContainer key={`contact-${type}`}>
-                     <h4>{type}</h4>
-                     { 
-                        // check for the correct a tag component for corresponding contact type
-                        type === `mail` || type === `phone` 
-                           ?  <StyledRegATag href={contents[type]} bgSelected={backgroundSelected}>
-                                 {getIcon(type)}
-                              </StyledRegATag>
-                           :  <StyledALink href={contents[type]} bgSelected={backgroundSelected}>
-                                 {getIcon(type)}
-                              </StyledALink> 
-                     }
-                  </ContactItemContainer>
+                  contents[type] 
+                  ? 
+                     <ContactItemContainer key={`contact-${type}`}>
+                        <h4>{type}</h4>
+                        { 
+                           // check for the correct a tag component for corresponding contact type
+                           type === `mail` || type === `phone` 
+                              ?  <StyledRegATag href={contents[type]} bgSelected={backgroundSelected}>
+                                    {getIcon(type)}
+                                 </StyledRegATag>
+                              :  <StyledALink href={contents[type]} bgSelected={backgroundSelected}>
+                                    {getIcon(type)}
+                                 </StyledALink> 
+                        }
+                     </ContactItemContainer> 
+                  :
+                     null
                ))
             }
             
