@@ -12,7 +12,6 @@ export const HeaderStyled = styled.header`
       height: 100%;
       background-color: var(--primary-color);
       opacity: .7;
-      z-index: -1;
    }
 `;
 
@@ -31,7 +30,8 @@ export const HeaderTitle = styled.h1`
    ${({navState}) => navState 
       ? `opacity: 0;
          z-index: -1;` 
-      : `opacity: 1;`
+      : `opacity: 1;
+         z-index: 1;`
    }
    
    a {

@@ -25,6 +25,7 @@ export const BkgdSelectorContainer = styled.div`
    align-items: center;
    justify-content: space-evenly;
    width: 6.5rem;
+   z-index: 1;
 
    &:hover > ${BkgdSelectorBox}:not(:hover) {
       transform: scale(1);
