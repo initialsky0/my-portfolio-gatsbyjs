@@ -27,6 +27,11 @@ export const IconContainerStyle = css`
    &:hover {
       transform: scale(1.15);
    }
+
+   svg {
+      height: 100%;
+      width: 100%;
+   }
 `;
 
 // svg files are downloaded from Font Awesome in compliance with the free license:
