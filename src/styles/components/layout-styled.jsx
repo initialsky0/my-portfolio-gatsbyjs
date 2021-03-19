@@ -12,6 +12,7 @@ export const ContentContainer = styled.div`
 
    main {
       flex: 1;
+      height: 100%;
    }
 `;
 
