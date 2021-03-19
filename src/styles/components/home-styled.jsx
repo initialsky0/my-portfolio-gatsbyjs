@@ -10,7 +10,7 @@ import { showContent,
 
 export const HomeContainer = styled.div`
    ${containerStyles}
-   height: calc(100%);
+   height: 70vh;
    align-items: center;
    justify-content: center;
 `;
