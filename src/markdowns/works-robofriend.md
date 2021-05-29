@@ -1,6 +1,6 @@
 ---
 section: "works"
-order: 2
+order: 3
 title: "Robo-Friends"
 imgName: "robofriend"
 links: { 

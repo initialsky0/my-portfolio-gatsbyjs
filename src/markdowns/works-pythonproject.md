@@ -1,6 +1,6 @@
 ---
 section: "works"
-order: 3
+order: 4
 title: "Python Mini Projects"
 imgName: "python-logo-master-v3-TM"
 links: { 

@@ -1,6 +1,6 @@
 ---
 section: "works"
-order: 5
+order: 6
 title: "Light and Dark Landing Page"
 imgName: "lightdarkmode"
 links: { 
